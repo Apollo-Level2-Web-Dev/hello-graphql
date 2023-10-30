@@ -1,6 +1,6 @@
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
-import { db } from './db.js';
+import { db } from './db';
 
 const typeDefs = `#graphql
     type Product {
@@ -25,13 +25,18 @@ const resolvers = {
     },
 };
 
-const server = new ApolloServer({
-    typeDefs,
-    resolvers,
-});
 
-const { url } = await startStandaloneServer(server, {
-    listen: { port: 4000 },
-});
 
-console.log(`🚀  Server ready at: ${url}`);
+const main = async () => {
+    const server = new ApolloServer({
+        typeDefs,
+        resolvers,
+    });
+    const { url } = await startStandaloneServer(server, {
+        listen: { port: 4000 },
+    });
+
+    console.log(`🚀  Server ready at: ${url}`);
+}
+
+main()
