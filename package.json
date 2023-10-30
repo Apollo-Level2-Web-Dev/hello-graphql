@@ -8,16 +8,13 @@
     "@apollo/server": "^4.9.5",
     "@types/node": "^20.8.9",
     "graphql": "^16.8.1",
-    "ts-node-dev": "^2.0.0",
     "typescript": "^5.2.2"
   },
   "scripts": {
     "compile": "tsc -w",
-    "start": "nodemon ./dist/index.js",
-    "dev": "concurrently --kill-others \"tsc -w\" \"nodemon dist/index.js\""
+    "start": "nodemon ./dist/index.js"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2",
     "nodemon": "^3.0.1"
   }
 }
